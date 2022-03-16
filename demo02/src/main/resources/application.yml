@@ -1,0 +1,34 @@
+
+server:
+  port: 8080
+
+
+# 数据库地址
+datasource:
+  url: localhost:3306/springbootdb
+
+spring:
+  datasource:
+    username: root
+    password: root
+    #url中database为对应的数据库名称
+    url: jdbc:mysql://${datasource.url}?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10 # 最大连接池数
+      max-lifetime: 1770000
+#
+#mybatis:
+#  # 指定别名设置的包为所有entity
+#  type-aliases-package: cn.object.demo02.domain
+#  configuration:
+#    map-underscore-to-camel-case: true # 驼峰命名规范
+#  mapper-locations: # mapper映射文件位置
+#    - classpath:mapper/*.xml
+#
+##iases-package: cn.object.demo02.domain
+#
+##showSql
+#logging:
+#  level:
+#    cn.object.demo02.mapper: debug
